@@ -1,11 +1,10 @@
 const express=require('express');
 const router =express.Router();
 const galleryController=require("../controllers/galleryController");
-
+const upload=require("../middleware/upload");
 
 router.get("/",galleryController.getAllCategories);
-// router.get("/getEsalaPerahera",galleryController.getEsalaPerahera);
-// router.get("/getDammaSchool",galleryController.getDammaSchool);
-// router.get("/getVibashanaDevalaya",galleryController.getVibashanaDevalaya);
+router.post("/:category_id",upload.single('picture_url'),galleryController.addPicture);
+router.delete("/:id",galleryController.deleteImage);
 
-module.exports=router
+module.exports=router 
