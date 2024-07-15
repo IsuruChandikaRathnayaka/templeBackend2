@@ -18,7 +18,7 @@ app.use('/uploads', express.static(path.join(__dirname, 'uploads')));
 app.use("/api/addContact",contactRoutes);//todo
 app.use("/api/events",eventRoutes);
 app.use("/api/gallery",galleryRoutes);
-
+//app.use("/uploads", express.static("uploads"));
 
 
 
