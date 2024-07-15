@@ -1,7 +1,7 @@
 const express = require("express");
 const cors=require("cors");
 const app=express();
-const port=8001;
+const port=8000;
 const db = require("./db/db");
 
 app.use(express.json());
@@ -14,9 +14,9 @@ const galleryRoutes=require("./routes/galleryRoute");
 
 
 //making routes
-app.use("/api/addContact",contactRoutes);
-app.use("/api/showEvents",eventRoutes);
-app.use("/api/getAllCategories",galleryRoutes);
+app.use("/api/addContact",contactRoutes);//todo
+app.use("/api/events",eventRoutes);
+app.use("/api/getAllCategories",galleryRoutes);//todo
 
 
 
