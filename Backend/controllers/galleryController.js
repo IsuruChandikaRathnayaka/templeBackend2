@@ -13,9 +13,7 @@ const getAllCategories = async (req, res) => {
       // Map over the categories to generate URLs for the images
       const categoriesWithImages = all_categories.map(category => {
         // Check if category.Logo exists and is not empty
-        const logoUrl = category.Logo && category.Logo.trim() !== '' 
-          ? `${req.protocol}://${req.get("host")}/uploads/${category.Logo}` 
-          : fallbackImageUrl;
+        const logoUrl = `http://localhost:8000/uploads/${category.picture_url}`;
         
         return {
           ...category,
