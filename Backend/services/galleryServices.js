@@ -15,6 +15,8 @@ const getAllCategories = () => {
 };
 
 const addPicture = (category_id, picture) => {
+  console.log("The category id is : ",category_id)
+
   const sql = "INSERT INTO pictures (picture_url,category_id) VALUES (? , ?)";
   return new Promise((resolve, reject) => {
     db.query(sql, [picture, category_id], (err, results) => {

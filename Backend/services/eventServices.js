@@ -16,14 +16,12 @@ const getAllEvents=()=>{
         })
     });
 
-
 }
 
-
-const addEvent=(month,date,title,description)=>{
-    const sql = "INSERT INTO events (month,date,title,description) VALUES (? ,? ,? ,? )";
+const addEvent=(month, date, title_english,title_sinhala, description_english,description_sinhala)=>{
+    const sql = "INSERT INTO events (month, date, title_english,title_sinhala, description_english,description_sinhala) VALUES (? ,? ,? , ? , ? , ? )";
     return new Promise((resolve,reject)=>{
-        db.query(sql,[month,date,title,description],(err,results)=>{
+        db.query(sql,[month, date, title_english,title_sinhala, description_english,description_sinhala],(err,results)=>{
             if(err){
                 console.log(err);
                 reject(err);
@@ -38,10 +36,10 @@ const addEvent=(month,date,title,description)=>{
 
 }
 
-const editEvent = (month,date,title,description,id)=>{
-    const sql = "UPDATE events SET month = ?, date = ?, title = ?, description = ? WHERE id = ?";
+const editEvent = (month, date, title_english,title_sinhala, description_english,description_sinhala,id)=>{
+    const sql = "UPDATE events SET month = ?, date = ?, title_english = ?,title_sinhala = ?,description_english = ? , description_sinhala = ?   WHERE id = ?";
     return new Promise((resolve,reject)=>{
-       db.query(sql,[month,date,title,description,id],(err,results)=>{
+       db.query(sql,[month, date, title_english,title_sinhala, description_english,description_sinhala,id],(err,results)=>{
             if(err){
                 console.log(err);
                 reject(err);

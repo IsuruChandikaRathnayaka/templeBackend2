@@ -17,7 +17,7 @@ const getAllCategories = async (req, res) => {
         
         return {
           ...category,
-          Logo: logoUrl, // Add the full URL to the image or fallback
+          Logo: logoUrl, 
         };
       });
   
